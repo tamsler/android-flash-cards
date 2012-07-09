@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Flash Cards</string>
+    <string name="menu_card_information">Card Info</string>
+    <string name="menu_card_delete">Delete Card</string>
+    <string name="menu_card_set_setup">Setup</string>
+    <string name="menu_card_set_external">Flashcard Exchange</string>
+    <string name="menu_card_set_about">About</string>
+    <string name="menu_card_set_help">Help</string>
+    <string name="menu_card_magnify">Zoom In</string>
+    <string name="menu_card_reduce">Zoom Out</string>
+    <string name="card_information">Card Set: %1$s</string>
+    <string name="list_menu_add">Add Card</string>
+    <string name="list_meanu_delete">Delete</string>
+    <string name="list_no_card_sets_message">There are no card sets</string>
+    <string name="add_card_front_title">Front Side</string>
+    <string name="add_card_back_title">Back Side</string>
+    <string name="add_card_save_message_error">ERROR: Was not able to save card</string>
+    <string name="add_card_save_message_warning1">Invalid front page entry</string>
+    <string name="add_card_save_message_warning2">Invalid entry</string>
+    <string name="add_card_save_message_back_page">Enter back side text and save</string>
+    <string name="add_card_save_message_success">Card saved</string>
+    <string name="new_card_set_message">Enter name:</string>
+    <string name="new_card_set_save_button">Save</string>
+    <string name="new_card_set_cancel_button">Cancel</string>
+    <string name="new_card_set_dialog_message_warning1">Name already exists</string>
+    <string name="new_card_set_dialog_message_warning2">Invalid name</string>
+    <string name="view_cards_emtpy_set_message">Card set is empty</string>
+    <string name="view_cards_fetch_remote_error">Was not able to get data from Flashcard Exchange</string>
+    <string name="input_validation_warning">Invalid input</string>
+    <string name="input_validation_warning2">The card\'s front side cannot be empty</string>
+    <string name="delete_card_set_dialog_message">Are you sure you want to delete the card set?</string>
+    <string name="delete_card_set_dialog_ok">Yes</string>
+    <string name="delete_card_set_dialog_cancel">Cancel</string>
+    <string name="setup_user_name">Enter User Name</string>
+    <string name="setup_title">Flashcard Exchange</string>
+    <string name="setup_save_user_name_success">Saved User Name</string>
+    <string name="setup_save_user_name_error">Flashcard Exchange Error: User name is unknown</string>
+    <string name="setup_save_user_name_failure">Was not able to verify user name</string>
+    <string name="setup_no_user_name_defined">Please provide your Flashcard Exchange user name.</string>
+    <string name="setup_show_sample_title">Show sample card sets</string>
+    <string name="setup_changed_font_size">Saved font size change</string>
+    <string name="util_connectivity_error">Cannot connect to the Internet</string>
+    <string name="util_flash_card_exchange_api_error">Flashcard Exchange Error</string>
+    <string name="delete_last_card_message">Deleted last card from card set:\n%1$s</string>
+    <string name="delete_card">Deleted card</string>
+    <string name="external_data_message_error">Application error: Getting external data</string>
+    
+    <string name="about_title">Flash Cards</string>
+    <string name="about_author">Thomas Amsler\ntamsler@gmail.com</string>
+    <string name="about_version">Version\n</string>
+
+    <string name="conversion">Converting Flash Cards &#8230;</string>
+    
+   <!--  Content Descriptors -->
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_close">Close</string>
+    <string name="button_list">Show Card Sets</string>
+    <string name="button_new_card_set">New Card Set</string>
+    <string name="button_edit">Edit</string>
+	<string name="button_magnify">Magnify</string>
+	<string name="button_backside">Backside</string>
+	<string name="button_overflow">Overflow</string>
+    <string name="image_divider">Divider</string>
+    
+    <string name="help_dialog_title">Help</string>
+    
+    <string name="email_feedback_chooser">Send your email in:</string>
+    <string name="email_feedback_subject">Flash Cards: User Feedback</string>
+
+</resources>

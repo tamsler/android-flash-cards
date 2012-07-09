@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_content_default">
+        <![CDATA[
+        <p>Help content not defined yet.</p>
+        ]]>
+    </string>
+    <string name="help_content_card_set_list">
+        <![CDATA[
+        <h5>Add Card Set</h5>
+        <p>To create a new card set, please tap on the plus icon on the action bar.</p>
+        <h5>Delete Card Set</h5>
+		<p>Tap and hold on the list item that you want to delete, and the \"Delete\" menu will show up. 
+		Then tap on delete, and confirm the deletion dialog.</p>
+        <h5>Add Card</h5>
+        <p>Tap and hold on the list item to which you want to add a card, and the \"Add Card\" menu will show up.
+        Then tap on add.
+        </p>
+        ]]>
+    </string>
+    <string name="help_content_setup">
+        <![CDATA[
+        <p>In order to access Flashcard Exchange, you have to
+        create an account with that service.</p>
+        <p>Please see:<br />
+        <a href="http://www.flashcardexchange.com">www.flashcardexchange.com</a></p>
+        ]]>
+    </string>
+    <string name="help_content_add_card">
+        <![CDATA[
+        <p>Enter content for the card\'s front side. Then tap on the save icon, which flips the card
+        so that you can enter content for the card\'s back side. Then tap on the save icon, which adds the card.</p>
+        <p>You can continue adding cards, or click on the cancle button to return to the card set list.</p>
+        ]]>
+    </string>
+    <string name="help_content_view_card">
+        <![CDATA[
+        <p>Tap anywhere on the card to switch between the front and backside 
+        of the card.</p>
+        <p>Change cards by swiping left and right.
+        ]]>
+    </string>
+</resources>

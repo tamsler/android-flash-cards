@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true" >
+
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/font_color"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:textSize="@dimen/CardDefaultFontSize" />
+    
+    <TextView
+        android:id="@+id/textViewAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/font_color"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:visibility="invisible"
+        android:textSize="@dimen/CardDefaultFontSize" />
+
+    <EditText
+        android:id="@+id/editTextWord"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|left"
+        android:layout_marginBottom="@dimen/EditWordPaddingTopBottom"
+        android:layout_marginTop="@dimen/EditWordPaddingTopBottom"
+        android:layout_marginLeft="@dimen/EditWordPaddingLeftRight"
+        android:layout_marginRight="@dimen/EditWordPaddingLeftRight"
+        android:textColor="@color/font_color"
+        android:typeface="normal"
+        android:visibility="invisible"
+        android:inputType="textMultiLine"
+        android:textSize="@dimen/CardDefaultFontSize" />
+
+    
+    <LinearLayout
+        android:id="@+id/linearLayoutEditButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewWordNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/SaveButtonTopPadding"
+        android:visibility="invisible" >
+
+        <ImageButton
+            android:id="@+id/imageButtonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/EditButtonsCenterPadding"
+            android:background="@null"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="@string/button_cancel" />
+        
+        <ImageButton
+            android:id="@+id/imageButtonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/EditButtonsCenterPadding"
+            android:background="@null"
+            android:src="@android:drawable/ic_menu_save"
+            android:contentDescription="@string/button_save" />
+        
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/textViewWordNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/WordNumberBottomPadding"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/font_color_card_info" />
+
+</RelativeLayout>

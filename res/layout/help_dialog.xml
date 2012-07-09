@@ -1,0 +1,18 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/DialogLayoutPadding"
+    android:scrollbars="vertical"
+    style="@style/Theme.WhiteBackground" >
+
+    <TextView
+        android:id="@+id/textViewHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DialogTitleBottomPadding"
+        android:autoLink="web"
+        android:textColor="@color/font_color"
+        android:textSize="@dimen/HelpDialogFontSize" />
+
+</ScrollView>

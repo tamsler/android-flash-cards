@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kindergarten_set1">
+        <item>all:All my toys.</item>
+        <item>am:I am happy.</item>
+        <item>are:We are good.</item>
+        <item>be:Be good.</item>
+        <item>but:We like no one but you.</item>
+        <item>came:I came home.</item>
+        <item>did: I did good.</item>
+        <item>do:I do work.</item>
+        <item>get:I get toys.</item>
+        <item>good:We did good.</item>
+        <item>have:I have fun.</item>
+        <item>like:I like animals.</item>
+        <item>must:We must go.</item>
+        <item>new:I like new toys.</item>
+        <item>no:There are no toys.</item>
+        <item>now:I want to play now.</item>
+        <item>on:I jump on my bed.</item>
+        <item>out:I pour water out of a bottle.</item>
+        <item>please:Can I have bread please?</item>
+        <item>pretty:I have pretty shoes.</item>
+        <item>saw:I saw a cat.</item>
+        <item>say:Say hello.</item>
+        <item>so:I am so tall.</item>
+        <item>soon:I will play soon.</item>
+        <item>under:I look under the table.</item>
+        <item>well:I do well in school.</item>
+        <item>went:I went to school.</item>
+        <item>what:What color do you like?</item>
+        <item>will:I will play now.</item>
+        <item>yes:Yes, I am coming.</item>
+    </string-array>
+    <string-array name="kindergarten_set2">
+        <item>a:A toy.</item>
+        <item>and:I like blue and pink.</item>
+        <item>are:We are happy.</item>
+        <item>for:I am looking for toys.</item>
+        <item>go:I go home.</item>
+        <item>have:I have fun.</item>
+        <item>he:He loves toys.</item>
+        <item>here:I am here."</item>
+        <item>I:I have fun.</item>
+        <item>is:She is happy.</item>
+        <item>like:I like toys.</item>
+        <item>my:I like my toys."</item>
+        <item>play:I play with cars.</item>
+        <item>said:You said it.</item>
+        <item>see:I see animals.</item>
+        <item>she:She loves toys.</item>
+        <item>the:The pink shoes.</item>
+        <item>to:I go to school.</item>
+    </string-array>
+</resources>

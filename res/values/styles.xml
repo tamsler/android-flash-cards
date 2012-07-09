@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="font_color">#000000</color>
+    <color name="font_color_action_bar">#FFFFFF</color>
+    <color name="font_color_card_info">#C0C0C0</color>
+    <color name="dialog_background">#FFFFFF</color>
+    <color name="list_overflow_background">#484848</color>
+    <style name="Theme.WhiteBackground" parent="@android:style/Theme.Dialog">
+        <item name="android:background">@color/dialog_background</item>
+    </style>
+</resources>

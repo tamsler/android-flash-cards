@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="@dimen/DialogLayoutPadding">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DialogTitleBottomPadding"
+        android:text="@string/new_card_set_message"
+        android:textColor="@color/font_color_action_bar"
+        android:textSize="@dimen/DialogFontSize"/>
+
+    <EditText
+        android:id="@+id/editTextDialogAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ActionBarItemRightPadding">30dp</dimen>
+    <dimen name="ActionBarItemRightBorderPadding">10dp</dimen>
+    <dimen name="ActionBarItemLeftPadding">10dp</dimen>
+    <dimen name="WordNumberBottomPadding">10dp</dimen>
+    <dimen name="ActionBarHeight">50dp</dimen>
+    <dimen name="ActionBarFontSize">18dp</dimen>
+    <dimen name="SaveButtonTopPadding">20dp</dimen>
+    <dimen name="AddWordTitleTopPadding">5dp</dimen>
+    <dimen name="AddWordEditTextPadding">10dp</dimen>
+    <dimen name="EditButtonsCenterPadding">20dp</dimen>
+    <dimen name="DialogTitleBottomPadding">15dp</dimen>
+    <dimen name="DialogLayoutPadding">10dp</dimen>
+    <dimen name="ActionBarSeparatorTopPadding">0dp</dimen>
+    <dimen name="ActionBarSeparatorBottomPadding">0dp</dimen>
+    <dimen name="ActionBarSeparatorRightPadding">15dp</dimen>
+    <dimen name="AboutTopPadding">30dp</dimen>
+    <dimen name="AboutFontSize">25sp</dimen>
+    <dimen name="SetupFontSize">20sp</dimen>
+    <dimen name="SetupTopPadding">16dp</dimen>
+    <dimen name="SetupLeftPadding">10dp</dimen>
+    <dimen name="SetupRightPadding">10dp</dimen>
+    <dimen name="DialogFontSize">20sp</dimen>
+    <dimen name="HelpDialogFontSize">20sp</dimen>
+    <dimen name="SetupDividerPaddingLeftRight">5dp</dimen>
+    <dimen name="SetupDividerPaddingTopBottom">10dp</dimen>
+    <dimen name="EditWordPaddingTopBottom">70dp</dimen>
+    <dimen name="EditWordPaddingLeftRight">10dp</dimen>
+    <dimen name="ListOverflowPaddingRight">10dp</dimen>
+    <dimen name="ListOverflowWidth">150dp</dimen>
+    <dimen name="CardDefaultFontSize">30sp</dimen>
+</resources>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSetup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textViewSetupTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/SetupLeftPadding"
+            android:layout_marginTop="@dimen/SetupTopPadding"
+            android:text="@string/setup_title"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/SetupFontSize" />
+
+        <EditText
+            android:id="@+id/editTextSetupUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewSetupTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/AddWordEditTextPadding"
+            android:layout_marginRight="@dimen/AddWordEditTextPadding"
+            android:hint="@string/setup_user_name"
+            android:inputType="text" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSetupEditButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextSetupUserName"
+            android:layout_centerHorizontal="true" >
+
+            <ImageButton
+                android:id="@+id/imageButtonSetupCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/EditButtonsCenterPadding"
+                android:background="@null"
+                android:contentDescription="@string/button_cancel"
+                android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+            <ImageButton
+                android:id="@+id/imageButtonSetupSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/EditButtonsCenterPadding"
+                android:background="@null"
+                android:contentDescription="@string/button_save"
+                android:src="@android:drawable/ic_menu_save" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewSetupDivider1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayoutSetupEditButtons"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/image_divider"
+            android:paddingBottom="@dimen/SetupDividerPaddingTopBottom"
+            android:paddingLeft="@dimen/SetupDividerPaddingLeftRight"
+            android:paddingRight="@dimen/SetupDividerPaddingLeftRight"
+            android:paddingTop="@dimen/SetupDividerPaddingTopBottom"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/divider_horizontal_textfield" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutSetupSampleData"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageViewSetupDivider1"
+            android:layout_centerHorizontal="true" >
+
+            <TextView
+                android:id="@+id/textViewSetupShowSample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/SetupLeftPadding"
+                android:text="@string/setup_show_sample_title"
+                android:textColor="@color/font_color"
+                android:textSize="@dimen/SetupFontSize" />
+
+            <CheckBox
+                android:id="@+id/checkBoxSetupShowSample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/SetupRightPadding" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageViewSetupDivider2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayoutSetupSampleData"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/image_divider"
+            android:paddingBottom="@dimen/SetupDividerPaddingTopBottom"
+            android:paddingLeft="@dimen/SetupDividerPaddingLeftRight"
+            android:paddingRight="@dimen/SetupDividerPaddingLeftRight"
+            android:paddingTop="@dimen/SetupDividerPaddingTopBottom"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/divider_horizontal_textfield" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutFontSize"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageViewSetupDivider2"
+            android:layout_centerHorizontal="true" >
+
+            <TextView
+                android:id="@+id/textViewFontSizePrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/SetupLeftPadding"
+                android:text="@string/font_size_prompt"
+                android:textColor="@color/font_color"
+                android:textSize="@dimen/SetupFontSize" />
+            
+            <Spinner
+                android:id="@+id/spinnerFontSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/SetupRightPadding"
+                android:prompt="@string/font_size_prompt" />
+
+        </RelativeLayout>
+        
+        <ImageView
+            android:id="@+id/imageViewSetupDivider3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayoutFontSize"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/image_divider"
+            android:paddingBottom="@dimen/SetupDividerPaddingTopBottom"
+            android:paddingLeft="@dimen/SetupDividerPaddingLeftRight"
+            android:paddingRight="@dimen/SetupDividerPaddingLeftRight"
+            android:paddingTop="@dimen/SetupDividerPaddingTopBottom"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/divider_horizontal_textfield" />
+        
+    </RelativeLayout>
+
+</ScrollView>

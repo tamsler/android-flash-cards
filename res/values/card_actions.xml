@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="card_actions">
+        <item>Zoom In</item>
+        <item>Zoom Out</item>
+        <item>Delete Card</item>
+        <item>Reshuffle</item>
+        <item>Card Info</item>
+        <item>Help</item>
+    </string-array>
+</resources>
