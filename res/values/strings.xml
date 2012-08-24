@@ -64,6 +64,7 @@
 	<string name="button_backside">Backside</string>
 	<string name="button_overflow">Overflow</string>
     <string name="image_divider">Divider</string>
+    <string name="image_previous">Previous</string>
     
     <string name="help_dialog_title">Help</string>
     

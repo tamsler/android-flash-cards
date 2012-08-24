@@ -41,6 +41,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -49,7 +50,7 @@ import android.widget.Toast;
 public class MainActivity extends FragmentActivity implements ActionBusListener, AppConstants {
 
 	private static final String FEEDBACK_EMAIL_ADDRESS = "tamsler@gmail.com";
-	
+
 	private ActionbarFragment mActionbarFragment;
 	private CardSetsFragment mCardSetsFragment;
 	private AddCardFragment mAddCardFragment;
@@ -67,11 +68,12 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 	private MainApplication mMainApplication;
 
 	private boolean mExitOnBackPressed;
-	
+
 	private int mFontSize;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.main);
@@ -83,27 +85,14 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 
 		mMainApplication.initActionBusListener();
 
-		mMainApplication.registerAction(
-				this,
-				ACTION_SHOW_CARD_SETS,
-				ACTION_SHOW_CARDS,
-				ACTION_SHOW_HELP,
-				ACTION_SHOW_SETUP,
-				ACTION_SHOW_ABOUT,
-				ACTION_GET_EXTERNAL_CARD_SETS,
-				ACTION_SET_HELP_CONTEXT,
-				ACTION_SHOW_ADD_CARD,
-				ACTION_ADD_CARD_SET,
-				ACTION_FONT_SIZE_CHANGE,
-				ACTION_SEND_FEEDBACK,
-				ACTION_RESHUFFLE_CARDS);
+		mMainApplication.registerAction(this, ACTION_SHOW_CARD_SETS, ACTION_SHOW_CARDS, ACTION_SHOW_HELP, ACTION_SHOW_SETUP, ACTION_SHOW_ABOUT, ACTION_GET_EXTERNAL_CARD_SETS, ACTION_SET_HELP_CONTEXT, ACTION_SHOW_ADD_CARD, ACTION_ADD_CARD_SET, ACTION_FONT_SIZE_CHANGE, ACTION_SEND_FEEDBACK, ACTION_RESHUFFLE_CARDS);
 
 		/*
 		 * Determine if we need to run the File to DB conversion
 		 */
 		SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
 		boolean runConversion = sharedPreferences.getBoolean(PREFERENCE_RUN_CONVERSION, PREFERENCE_RUN_CONVERSION_DEFAULT);
-		
+
 		if (runConversion) {
 
 			FileToDbConversion conversion = new FileToDbConversion();
@@ -113,7 +102,7 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 			editor.putBoolean(PREFERENCE_RUN_CONVERSION, false);
 			editor.commit();
 		}
-		
+
 		/*
 		 * Getting the preferred font size
 		 */
@@ -131,6 +120,11 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 
 		mDataSource.open();
 		super.onResume();
+
+		if (CARDS_FRAGMENT == mActiveFragmentReference) {
+
+			showCardsFragment(mCurrentCardSet);
+		}
 	}
 
 	@Override
@@ -186,7 +180,7 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 		if (null == mActionbarFragment) {
 
 			mActionbarFragment = ActionbarFragment.newInstance(LIST_FRAGMENT);
-			fragmentTransaction.replace(R.id.actionbarContainer,mActionbarFragment);
+			fragmentTransaction.replace(R.id.actionbarContainer, mActionbarFragment);
 		}
 		else {
 
@@ -248,8 +242,7 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 	private void showSetupFragment() {
 
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager
-				.beginTransaction();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
 		if (null == mActionbarFragment) {
 
@@ -307,7 +300,7 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 	private void showCardsFragment(CardSet cardSet) {
 
 		mCurrentCardSet = cardSet;
-		
+
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -323,8 +316,15 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 
 		mCardsPager = new CardsPager(this, mDataSource, cardSet, mFontSize);
 
-		fragmentTransaction.addToBackStack(null);
-		fragmentTransaction.commit();
+		try {
+			
+			fragmentTransaction.addToBackStack(null);
+			fragmentTransaction.commit();
+		}
+		catch (Exception e) {
+
+			Log.e(LOG_TAG, "Exception", e);
+		}
 
 		mFragmentContainer.setVisibility(View.GONE);
 		mViewPager.setVisibility(View.VISIBLE);
@@ -376,10 +376,9 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 
 		if (null == mCardSetsFragment) {
 
-			Toast.makeText(getApplicationContext(),
-					R.string.external_data_message_error, Toast.LENGTH_SHORT)
-					.show();
-		} else {
+			Toast.makeText(getApplicationContext(), R.string.external_data_message_error, Toast.LENGTH_SHORT).show();
+		}
+		else {
 
 			mCardSetsFragment.getFlashCardExchangeCardSets();
 		}
@@ -389,8 +388,8 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 
 		int fontSize = NORMAL_FONT_SIZE;
 
-		switch(fontSizePreference) {
-		
+		switch (fontSizePreference) {
+
 		case PREFERENCE_SMALL_FONT_SIZE:
 			fontSize = SMALL_FONT_SIZE;
 			break;
@@ -404,23 +403,22 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 			fontSize = NORMAL_FONT_SIZE;
 			break;
 		}
-		
+
 		return fontSize;
 	}
-	
+
 	private void sendFeedback() {
-		
+
 		String toList[] = { FEEDBACK_EMAIL_ADDRESS };
-        
-        Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-        emailIntent.setType("plain/text");
-        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, toList);
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getResources().getString(R.string.email_feedback_subject));
-        
-        startActivity(Intent.createChooser(emailIntent, getResources().getString(R.string.email_feedback_chooser)));
+
+		Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+		emailIntent.setType("plain/text");
+		emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, toList);
+		emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getResources().getString(R.string.email_feedback_subject));
+
+		startActivity(Intent.createChooser(emailIntent, getResources().getString(R.string.email_feedback_chooser)));
 	}
-	
-	
+
 	public DataSource getDataSource() {
 
 		return mDataSource;
@@ -483,7 +481,7 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 			mCardSetsFragment.addCardSet((CardSet) data);
 			break;
 		case ACTION_FONT_SIZE_CHANGE:
-			int fontSizePreference = (null != data ? ((Integer)data).intValue() : PREFERENCE_NORMAL_FONT_SIZE);
+			int fontSizePreference = (null != data ? ((Integer) data).intValue() : PREFERENCE_NORMAL_FONT_SIZE);
 			mFontSize = getFontSizePreference(fontSizePreference);
 			break;
 		case ACTION_SEND_FEEDBACK:

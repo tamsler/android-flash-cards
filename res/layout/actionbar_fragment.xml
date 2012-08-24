@@ -5,24 +5,35 @@
     android:layout_height="fill_parent"
     android:background="@drawable/actionbar_gradient" >
 
+    <ImageView
+        android:id="@+id/imageViewPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="-8dp"
+        android:contentDescription="@string/image_previous"
+        android:src="@drawable/ic_action_previous"
+        android:visibility="gone" />
+
     <ImageButton
         android:id="@+id/imageButtonList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/ActionBarItemLeftPadding"
         android:layout_marginRight="@dimen/ActionBarItemRightPadding"
-        android:layout_alignParentLeft="true"
         android:background="@null"
         android:contentDescription="@string/button_list"
         android:src="@drawable/ic_action_list" />
-    
+
     <TextView
         android:id="@+id/textViewListActionBarTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imageButtonList"
         android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/imageButtonList"
         android:text="@string/app_name"
         android:textColor="@color/font_color_action_bar"
         android:textSize="@dimen/ActionBarFontSize"
@@ -66,8 +77,8 @@
         android:id="@+id/imageButtonOverflow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/ActionBarItemRightBorderPadding"
         android:background="@null"
         android:contentDescription="@string/button_overflow"

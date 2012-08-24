@@ -41,6 +41,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -82,6 +83,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 	private ImageButton mImageButtonNewCardSet;
 	private ImageButton mImageButtonList;
 	private ImageButton mImageButtonOverflow;
+	private ImageView mImageViewPrevious;
 
 	private int mFragmentType;
 
@@ -129,6 +131,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 			}
 		});
 
+		mImageViewPrevious = (ImageView)getActivity().findViewById(R.id.imageViewPrevious);
 
 		mImageButtonNewCardSet = (ImageButton)getActivity().findViewById(R.id.imageButtonNewCardSet);
 		mImageButtonNewCardSet.setOnClickListener(new OnClickListener() {
@@ -253,6 +256,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonNewCardSet.setVisibility(View.GONE);
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
+		mImageViewPrevious.setVisibility(View.VISIBLE);
 		mFragmentType = ADD_FRAGMENT;
 	}
 
@@ -262,6 +266,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonNewCardSet.setVisibility(View.VISIBLE);
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
+		mImageViewPrevious.setVisibility(View.GONE);
 		mFragmentType = LIST_FRAGMENT;
 		mListViewOverflow.setOnItemClickListener(getCardSetsFragmentActionListener());
 		setOverflowActions(getResources().getStringArray(R.array.card_set_actions));
@@ -273,6 +278,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonNewCardSet.setVisibility(View.GONE);
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
+		mImageViewPrevious.setVisibility(View.VISIBLE);
 		mFragmentType = SETUP_FRAGMENT;
 		mListViewOverflow.setOnItemClickListener(getSetupFragmentActionListener());
 		setOverflowActions(getResources().getStringArray(R.array.setup_actions));
@@ -284,6 +290,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonNewCardSet.setVisibility(View.GONE);
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
+		mImageViewPrevious.setVisibility(View.VISIBLE);
 		mFragmentType = ABOUT_FRAGMENT;
 	}
 
@@ -293,6 +300,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonNewCardSet.setVisibility(View.GONE);
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
+		mImageViewPrevious.setVisibility(View.VISIBLE);
 		mFragmentType = CARDS_FRAGMENT;
 		mListViewOverflow.setOnItemClickListener(getCardFragmentActionListener());
 		setOverflowActions(getResources().getStringArray(R.array.card_actions));
