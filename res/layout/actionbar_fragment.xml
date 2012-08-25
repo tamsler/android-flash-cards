@@ -18,15 +18,15 @@
 
     <ImageButton
         android:id="@+id/imageButtonList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/ActionBarItemLeftPadding"
         android:layout_marginRight="@dimen/ActionBarItemRightPadding"
-        android:background="@null"
+        android:background="@drawable/actionbar_button_state"
         android:contentDescription="@string/button_list"
-        android:src="@drawable/ic_action_list" />
+        android:src="@drawable/ic_action_logo" />
 
     <TextView
         android:id="@+id/textViewListActionBarTitle"
@@ -51,36 +51,36 @@
 
     <ImageButton
         android:id="@+id/imageButtonEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/ActionBarItemRightPadding"
         android:layout_toLeftOf="@+id/imageButtonNewCardSet"
-        android:background="@null"
+        android:background="@drawable/actionbar_button_state"
         android:contentDescription="@string/button_edit"
         android:src="@drawable/ic_action_edit"
         android:visibility="gone" />
 
     <ImageButton
         android:id="@+id/imageButtonNewCardSet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/ActionBarItemRightPadding"
         android:layout_toLeftOf="@+id/imageButtonOverflow"
-        android:background="@null"
+        android:background="@drawable/actionbar_button_state"
         android:contentDescription="@string/button_new_card_set"
         android:src="@drawable/ic_action_new"
         android:visibility="gone" />
 
     <ImageButton
         android:id="@+id/imageButtonOverflow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/ActionBarItemRightBorderPadding"
-        android:background="@null"
+        android:background="@drawable/actionbar_button_state"
         android:contentDescription="@string/button_overflow"
         android:src="@drawable/ic_action_overflow" />
 

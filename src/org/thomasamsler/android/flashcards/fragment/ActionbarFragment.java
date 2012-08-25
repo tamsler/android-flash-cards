@@ -257,6 +257,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
 		mImageViewPrevious.setVisibility(View.VISIBLE);
+		mImageButtonList.setEnabled(true);
 		mFragmentType = ADD_FRAGMENT;
 	}
 
@@ -267,6 +268,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
 		mImageViewPrevious.setVisibility(View.GONE);
+		mImageButtonList.setEnabled(false);
 		mFragmentType = LIST_FRAGMENT;
 		mListViewOverflow.setOnItemClickListener(getCardSetsFragmentActionListener());
 		setOverflowActions(getResources().getStringArray(R.array.card_set_actions));
@@ -279,6 +281,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
 		mImageViewPrevious.setVisibility(View.VISIBLE);
+		mImageButtonList.setEnabled(true);
 		mFragmentType = SETUP_FRAGMENT;
 		mListViewOverflow.setOnItemClickListener(getSetupFragmentActionListener());
 		setOverflowActions(getResources().getStringArray(R.array.setup_actions));
@@ -291,6 +294,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
 		mImageViewPrevious.setVisibility(View.VISIBLE);
+		mImageButtonList.setEnabled(true);
 		mFragmentType = ABOUT_FRAGMENT;
 	}
 
@@ -301,6 +305,7 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 		mImageButtonList.setVisibility(View.VISIBLE);
 		mImageButtonOverflow.setVisibility(View.VISIBLE);
 		mImageViewPrevious.setVisibility(View.VISIBLE);
+		mImageButtonList.setEnabled(true);
 		mFragmentType = CARDS_FRAGMENT;
 		mListViewOverflow.setOnItemClickListener(getCardFragmentActionListener());
 		setOverflowActions(getResources().getStringArray(R.array.card_actions));
