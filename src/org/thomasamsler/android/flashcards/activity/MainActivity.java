@@ -56,7 +56,6 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 	private AddCardFragment mAddCardFragment;
 	private SetupFragment mSetupFragment;
 	private AboutFragment mAboutFragment;
-	private CardsPager mCardsPager;
 	private CardSet mCurrentCardSet;
 	private int mHelpContext;
 	private DataSource mDataSource;
@@ -71,6 +70,8 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 
 	private int mFontSize;
 
+	private CardsPager mCurrentCardsPager;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
@@ -79,7 +80,6 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 		setContentView(R.layout.main);
 
 		mDataSource = new DataSource(this);
-		mDataSource.open();
 
 		mMainApplication = (MainApplication) getApplication();
 
@@ -113,18 +113,6 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 		mViewPager = (ViewPager) findViewById(R.id.viewpager);
 
 		showCardSetsFragment(false);
-	}
-
-	@Override
-	protected void onResume() {
-
-		mDataSource.open();
-		super.onResume();
-
-		if (CARDS_FRAGMENT == mActiveFragmentReference) {
-
-			showCardsFragment(mCurrentCardSet);
-		}
 	}
 
 	@Override
@@ -301,6 +289,15 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 
 		mCurrentCardSet = cardSet;
 
+		/*
+		 * Clear "old" CardsPager so that we see the old cards when the new
+		 * pager gets launched.
+		 */
+		if (null != mCurrentCardsPager) {
+
+			mCurrentCardsPager.clear();
+		}
+
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -314,10 +311,12 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 			mActionbarFragment.configureFor(CARDS_FRAGMENT);
 		}
 
-		mCardsPager = new CardsPager(this, mDataSource, cardSet, mFontSize);
+		CardsPager cardsPager = CardsPager.newInstance(cardSet, mFontSize);
 
 		try {
-			
+
+			fragmentTransaction.replace(R.id.viewpager, cardsPager);
+
 			fragmentTransaction.addToBackStack(null);
 			fragmentTransaction.commit();
 		}
@@ -325,6 +324,8 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 
 			Log.e(LOG_TAG, "Exception", e);
 		}
+
+		mCurrentCardsPager = cardsPager;
 
 		mFragmentContainer.setVisibility(View.GONE);
 		mViewPager.setVisibility(View.VISIBLE);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- Action bar -->
+
+    <LinearLayout
+        android:id="@+id/actionbarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ActionBarHeight" />
+
+    <ListView
+        android:id="@+id/lv_card_sets"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/actionbarContainer" >
+    </ListView>
+
+    <ListView
+        android:id="@+id/listViewOverflow"
+        android:layout_width="@dimen/ListOverflowWidth"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/actionbarContainer"
+        android:layout_marginRight="@dimen/ListOverflowPaddingRight"
+        android:background="@color/list_overflow_background"
+        android:cacheColorHint="#00000000"
+        android:fadingEdge="none"
+        android:visibility="gone" />
+
+</RelativeLayout>

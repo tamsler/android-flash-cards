@@ -91,10 +91,10 @@ public class ActionbarFragment extends Fragment implements AppConstants, ActionB
 	
 	public static ActionbarFragment newInstance(int fragmentType) {
 
-		ActionbarFragment listActionbarFragment = new ActionbarFragment();
-		listActionbarFragment.setFragmentType(fragmentType);
+		ActionbarFragment actionbarFragment = new ActionbarFragment();
+		actionbarFragment.setFragmentType(fragmentType);
 
-		return listActionbarFragment;
+		return actionbarFragment;
 	}
 
 	@Override

@@ -28,8 +28,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="@dimen/AddWordEditTextPadding"
             android:layout_marginRight="@dimen/AddWordEditTextPadding"
+            android:ems="10"
             android:hint="@string/setup_user_name"
-            android:inputType="text" />
+            android:inputType="textEmailAddress" />
 
         <LinearLayout
             android:id="@+id/linearLayoutSetupEditButtons"
@@ -129,7 +130,7 @@
                 android:text="@string/font_size_prompt"
                 android:textColor="@color/font_color"
                 android:textSize="@dimen/SetupFontSize" />
-            
+
             <Spinner
                 android:id="@+id/spinnerFontSize"
                 android:layout_width="wrap_content"
@@ -138,9 +139,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="@dimen/SetupRightPadding"
                 android:prompt="@string/font_size_prompt" />
-
         </RelativeLayout>
-        
+
         <ImageView
             android:id="@+id/imageViewSetupDivider3"
             android:layout_width="fill_parent"
@@ -154,7 +154,6 @@
             android:paddingTop="@dimen/SetupDividerPaddingTopBottom"
             android:scaleType="fitXY"
             android:src="@android:drawable/divider_horizontal_textfield" />
-        
     </RelativeLayout>
 
 </ScrollView>
