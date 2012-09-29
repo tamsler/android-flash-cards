@@ -88,6 +88,7 @@ public class CardsPager extends Fragment implements ActionBusListener, AppConsta
 		}
 	}
 
+	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
@@ -164,7 +165,7 @@ public class CardsPager extends Fragment implements ActionBusListener, AppConsta
 			}
 		});
 	}
-
+	
 	protected void showHelp() {
 
 		HelpDialog helpDialog = new HelpDialog(mActivity);

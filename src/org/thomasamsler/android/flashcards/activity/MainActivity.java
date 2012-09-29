@@ -116,11 +116,19 @@ public class MainActivity extends FragmentActivity implements ActionBusListener,
 	}
 
 	@Override
-	protected void onPause() {
-
-		mDataSource.close();
+	public void onPause() {
+		
+		mMainApplication.doAction(ACTION_SHOW_CARD_SETS, Boolean.TRUE);
 		super.onPause();
 	}
+	
+	@Override
+	public void onDestroy() {
+		
+		mDataSource.close();
+		super.onDestroy();
+	}
+	
 
 	@Override
 	public void onBackPressed() {

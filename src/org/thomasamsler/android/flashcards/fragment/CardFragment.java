@@ -23,6 +23,7 @@ import org.thomasamsler.android.flashcards.model.Card;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,10 +77,10 @@ public class CardFragment extends Fragment implements AppConstants {
 
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	public void onActivityCreated(final Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
 	}
-
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
